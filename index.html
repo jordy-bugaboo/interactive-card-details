@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  
+  <main class="c-container">
+    <section class="c-credit-card" aria-role="contentinfo" aria-label="Summary Input Credit Card Details">
+      <div class="c-background-header"></div>
+      <div class="credit-card--front" aria-label="Credit Card Front Information Display">
+        <img src="./images/card-logo.svg" class="credit-card--logo" alt="Credit card logo"/>
+        <span class="credit-card--number" aria-placeholder="You credit card number will be shown here">0000 0000 0000 0000</span>
+        <span class="credit-card--name" aria-placeholder="Your name will be shown here">Jane Appleseed</span>
+        <span class="credit-card--date" aria-placeholder="Your card experation date will be shown here"> 00/00</span>
+      </div>
+      <div class="credit-card--back" aria-label="Credit Card Back Information Display">
+        <span class="credit-card--cvc" aria-placeholder="Your card cvc number will be shown here">000</span>
+      </div>
+    </section>
+
+    <section class="c-input-card" aria-label="Input Credit Card Information" >
+      <form class="input-card--information" id="inputCardDetails">
+        <p class="input-card-subtitle">&#42; indicates a required field</p>
+        <label for="cardholdername">CARDHOLDER NAME: &#42;</label>
+        <input type="text" id="cardholdername" name="cardholdername" placeholder="e.g. Jane Appleseed" required>
+        <p class="error_cardholdername u-hidden">Can't be blank</p>
+        <label for="cardnumber">CARD NUMBER: &#42;</label>
+        <input type="text" id="cardnumber" name="cardnumber" maxlength="16" placeholder="e.g. 1234 5678 9123 0000" required>
+        <p class="error_cardnumber u-hidden">Can't be blank</p>
+        <p class="error_format u-hidden">Wrong format, numbers only</p>
+        <div class="u-flex">
+        <label for="experationdate">Exp. Date (MM/YY): &#42;</label>
+        <label class="cvc" for="cvc">CVC: &#42;</label>
+       
+        </div>
+        <div class="u-grid">
+          <div class="c-date-container">
+          <input type="text" id="expirationmonth" name="expirationmonth" maxlength="2" placeholder="MM" required>
+          <input type="text" id="expirationyear" name="expirationyear" maxlength="2" placeholder="YY" required>
+          <input type="text" id="cvc" name="cvc" maxlength="4" placeholder="e.g. 123" required>
+        
+          </div>
+        </div>
+        <div class="u-flex">
+          <p class="error_expirationdate u-visibility-hidden">Can't be blank</p>
+          <p class="error_cvc u-visibility-hidden">Can't be blank</p>
+        </div>
+    
+        <button type="button" form="inputCardDetails" value="confirm" id="submitcarddetails">Confirm</button>
+      </form>
+     
+    </section>
+
+    <section class="c-confirmation u-hidden" aria-label="Confirmed Completion Submitting Credit Card Information" id="confirmationCardDetails">
+      <div class="confirmation--thankyou">
+        <img class="icon-complete" src="./images/icon-complete.svg" alt="registration complete">
+        <h1>Thank you!</h1>
+        <span>
+          <p>We've added your card details</p>
+        </span>
+      </div>
+      <div class="u-flex u-flex-jc">
+      <button class="btn-continue"type="button" value="Continue">Continue</button>
+     </div>
+    </section>
+  </main>
+
+
+  <footer>
+    <div class="sr-only">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Jordy</a>.
+    </div>
+  </footer>
+</body>
+<script src="script.js"></script>
+</html>
